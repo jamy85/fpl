@@ -82,7 +82,9 @@ def render() -> None:
     with f1:
         positions = st.multiselect("Position", ["GKP", "DEF", "MID", "FWD"])
     with f2:
-        max_price = st.slider("Max price (£M)", 3.5, 15.0, 15.0, 0.5)
+        price_lo = float(df["Price"].min())
+        price_hi = float(df["Price"].max())
+        max_price = st.slider("Max price (£M)", price_lo, price_hi, price_hi, 0.5)
     with f3:
         team_pick = st.multiselect("Team", sorted(df["Team"].unique()))
     with f4:
