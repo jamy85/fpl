@@ -1,0 +1,2 @@
+# Streamlit Community Cloud installs this; deps live in pyproject.toml.
+-e .
